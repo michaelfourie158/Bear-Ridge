@@ -12,12 +12,14 @@ body {
   background: linear-gradient(to bottom, #f8a000, #ffda95);
   /* Light background color */
   line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 h1,
@@ -48,7 +50,6 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 -20px; /* Negative margin to extend the image to full width */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
