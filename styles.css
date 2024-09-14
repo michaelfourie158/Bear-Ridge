@@ -282,6 +282,12 @@ strong {
     flex: 1 1 calc(50% - 20px);
     max-width: calc(50% - 20px);
   }
+  .destination-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+  }
+  .destination-item {
+    font-size: 1rem; /* Smaller text size for mobile */
+  }
 }
 
 @media (max-width: 576px) {
@@ -294,5 +300,9 @@ strong {
   .gallery-item {
     flex: 1 1 100%;
     max-width: 100%;
+  }
+  .destination-item {
+    font-size: 0.9rem; /* Further reduce text size for smaller screens */
+    padding: 0px; /* Adjust padding if needed */
   }
 }
