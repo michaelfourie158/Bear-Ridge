@@ -9,7 +9,8 @@
 body {
   font-family: "Roboto", sans-serif;
   color: #333;
-  background-color: #f4f4f4; /* Light background color */
+  background: linear-gradient(to bottom, #f8a000, #ffda95);
+  /* Light background color */
   line-height: 1.6;
 }
 
@@ -25,6 +26,10 @@ h3 {
   margin-bottom: 1rem;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -32,18 +37,35 @@ a {
 
 /* Header Section */
 .hero-section {
-  background: linear-gradient(
-    135deg,
-    rgba(233, 143, 0, 1) 0%,
-    rgba(255, 197, 91, 1) 100%
-  );
+  position: relative; /* Positioning context for the overlay */
+  background-image: url("./assets/truck4.jpg"); /* Path to your background image */
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the image */
   color: white;
   text-align: center;
-  padding: 60px 20px; /* Increased padding for a modern look */
+  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 -20px; /* Negative margin to extend the image to full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: 1; /* Ensure the overlay is above the background image but below the content */
+}
+
+.hero-content {
+  position: relative; /* Positioning context for the text content */
+  z-index: 2; /* Ensure the content is above the overlay */
 }
 
 .navbar {
@@ -51,10 +73,12 @@ a {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 4rem;
+  position: relative; /* Ensure it is above the hero section overlay */
+  z-index: 3; /* Ensure nav links are clickable */
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
@@ -79,7 +103,7 @@ a {
 }
 
 .hero-content h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -117,6 +141,24 @@ a {
 .service-item {
   background-color: #fff;
   padding: 30px;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Destination Section */
+.destination-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* Increased gap */
+}
+
+.destination-item {
+  background-color: #fff;
   border-radius: 15px; /* Rounded corners */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
