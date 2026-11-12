@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bearridgeholdings.co.za/sitemap.xml
