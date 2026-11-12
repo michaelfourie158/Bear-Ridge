@@ -12,12 +12,13 @@
   $("#year").textContent = new Date().getFullYear();
 
   // scroll: progress, header, back-to-top
-  const bar = $(".progress i"), header = $(".site-header"), top = $(".to-top");
+  const fab = $(".call-fab"), bar = $(".progress i"), header = $(".site-header"), top = $(".to-top");
   const onScroll = () => {
     const h = document.documentElement, max = h.scrollHeight - h.clientHeight;
     bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
     header.classList.toggle("scrolled", scrollY > 20);
     top.classList.toggle("show", scrollY > 700);
+    fab.classList.toggle("show", scrollY > 600);
   };
   addEventListener("scroll", onScroll, { passive: true }); onScroll();
   top.addEventListener("click", () => scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }));
