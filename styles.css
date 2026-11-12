@@ -1,90 +1,93 @@
-:root {
-  --paper: #f3f0e9;
-  --ink: #14181c;
-  --muted: #5b6168;
-  --line: #d6d1c4;
-  --orange: #e8590c;
-}
+:root { --bg: #f6f5f1; --ink: #111315; --muted: #62676d; --card: #ffffff; --line: #e3e1da; --orange: #ee5a12; --r: 28px; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 70px; }
-body { font-family: "Barlow", system-ui, sans-serif; font-size: 1.05rem; line-height: 1.6; color: var(--ink); background: var(--paper); }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { font-family: "Inter", system-ui, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
-ul, ol { list-style: none; }
-h1, h2, h3, .brand { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; text-transform: uppercase; line-height: 1; letter-spacing: .01em; }
-.wrap { width: min(1180px, 100% - 40px); margin-inline: auto; }
+ul { list-style: none; }
+h1, h2, h3, .brand { font-family: "Inter Tight", "Inter", sans-serif; letter-spacing: -0.035em; line-height: 1.02; font-weight: 600; }
+.wrap { width: min(1240px, 100% - 48px); margin-inline: auto; }
 
-.site-header { position: sticky; top: 0; z-index: 10; background: var(--paper); border-bottom: 1px solid var(--line); }
-.nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.brand { font-size: 1.6rem; font-weight: 700; text-decoration: none; }
-.brand span { color: var(--orange); }
-.nav-links { display: flex; align-items: center; gap: 28px; font-weight: 500; font-size: .95rem; }
-.nav-links a { text-decoration: none; }
-.nav-links a:hover { color: var(--orange); }
-.nav-links .nav-cta { background: var(--ink); color: var(--paper); padding: 9px 18px; }
-.nav-links .nav-cta:hover { background: var(--orange); color: #fff; }
-.menu-btn { display: none; background: none; border: 1px solid var(--ink); padding: 6px 14px; font: 600 .9rem "Barlow", sans-serif; text-transform: uppercase; cursor: pointer; }
+/* nav floats over the hero */
+.site-header { position: fixed; top: 18px; left: 0; right: 0; z-index: 20; }
+.nav { width: min(1240px, 100% - 48px); margin-inline: auto; display: flex; align-items: center; justify-content: space-between; height: 60px; padding: 0 10px 0 26px; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); border-radius: 999px; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 8px 30px rgba(0,0,0,.08); }
+.brand { font-size: 1.35rem; font-weight: 700; text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 6px; font-size: .95rem; font-weight: 500; }
+.nav-links a { text-decoration: none; padding: 9px 14px; border-radius: 999px; }
+.nav-links a:hover { background: #efede6; }
+.nav-links .nav-cta { background: var(--ink); color: #fff; padding: 11px 22px; margin-left: 6px; }
+.nav-links .nav-cta:hover { background: var(--orange); }
+.menu-btn { display: none; background: var(--ink); color: #fff; border: 0; padding: 10px 20px; border-radius: 999px; font: 600 .9rem "Inter", sans-serif; cursor: pointer; }
 
-.hero { position: relative; color: #fff; background: linear-gradient(90deg, rgba(20,24,28,.88) 0%, rgba(20,24,28,.45) 70%), url("./assets/truck4.jpg") center 45% / cover; min-height: min(86vh, 760px); display: flex; flex-direction: column; justify-content: flex-end; }
-.hero-inner { padding: 120px 0 60px; }
-.hero h1 { font-size: clamp(3.2rem, 9vw, 7.5rem); font-weight: 700; max-width: 11ch; margin-bottom: 28px; }
-.hero-inner p { max-width: 52ch; font-size: 1.2rem; margin-bottom: 32px; color: #e9e6df; }
-.btn { display: inline-block; background: var(--orange); color: #fff; padding: 15px 30px; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: .04em; font-size: .9rem; }
-.btn:hover { background: #fff; color: var(--ink); }
-.hero .hero-foot { max-width: none; margin-bottom: 0; padding: 16px 0; border-top: 1px solid rgba(255,255,255,.3); font-size: .85rem; text-transform: uppercase; letter-spacing: .12em; color: #d6d3cc; }
+/* hero: big rounded photo */
+.hero { position: relative; margin: 12px; min-height: min(92vh, 860px); border-radius: 36px; overflow: hidden; color: #fff; display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; padding: clamp(28px, 5vw, 64px); background: linear-gradient(180deg, rgba(10,12,14,.15) 30%, rgba(10,12,14,.78) 100%), url("./assets/truck4.jpg") center 40% / cover; }
+.hero h1 { font-size: clamp(2.8rem, 7.2vw, 6.4rem); max-width: 12ch; margin-bottom: 22px; }
+.hero-copy p { max-width: 46ch; font-size: 1.15rem; color: #e6e4de; }
+.hero-card { flex: 0 0 320px; background: rgba(255,255,255,.95); color: var(--ink); border-radius: 24px; padding: 26px; display: grid; gap: 18px; }
+.hero-card p { font-size: .98rem; color: #3b4045; }
+.hero-card small { color: var(--muted); font-size: .82rem; }
+.btn { display: block; text-align: center; background: var(--orange); color: #fff; text-decoration: none; padding: 15px 24px; border-radius: 999px; font-weight: 600; transition: background .2s; }
+.btn:hover { background: var(--ink); }
 
-.section { padding: 90px 0; }
-h2 { font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 700; }
-.split { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; }
-.split > h2 { position: sticky; top: 100px; }
+.section { padding: clamp(70px, 9vw, 120px) 0 0; }
+h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); margin-bottom: 36px; }
 
-.services li { display: grid; grid-template-columns: 56px 1fr; column-gap: 12px; padding: 26px 0; border-top: 1px solid var(--ink); }
-.services li:last-child { border-bottom: 1px solid var(--ink); }
-.services .n { grid-row: span 2; font: 600 1rem "Barlow Condensed", sans-serif; color: var(--orange); padding-top: 4px; }
-.services h3 { font-size: 1.7rem; margin-bottom: 8px; }
-.services p { color: var(--muted); max-width: 60ch; }
+/* bento services */
+.bento { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.tile { background: var(--card); border-radius: var(--r); padding: 26px; min-height: 250px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; }
+.tile .n { font: 500 .9rem "Inter Tight", sans-serif; color: var(--muted); }
+.tile h3 { font-size: 1.45rem; margin-bottom: 10px; }
+.tile p { font-size: .94rem; color: var(--muted); }
+.tile.dark { background: var(--ink); color: #fff; }
+.tile.dark p, .tile.dark .n { color: #a9aeb4; }
+.tile:last-child { grid-column: span 2; }
+.tile.feature { grid-column: span 2; grid-row: span 2; background: linear-gradient(180deg, rgba(10,12,14,.1), rgba(10,12,14,.82)), url("./assets/truck5.jpg") center / cover; color: #fff; padding: 34px; }
+.tile.feature h3 { font-size: 2.4rem; }
+.tile.feature p, .tile.feature .n { color: #e2e0da; font-size: 1rem; }
 
-.strip { background: var(--ink); color: var(--paper); }
-.strip h2 { margin-bottom: 36px; }
-.places { display: flex; flex-wrap: wrap; gap: 6px 36px; font: 600 clamp(1.8rem, 4.5vw, 3.2rem) "Barlow Condensed", sans-serif; text-transform: uppercase; }
-.places li:nth-child(odd) { color: var(--paper); }
-.places li:nth-child(even) { color: #8d949b; }
-.places li:hover { color: var(--orange); }
+.places { font: 600 clamp(1.8rem, 4.8vw, 3.8rem)/1.2 "Inter Tight", sans-serif; letter-spacing: -0.03em; }
+.places i { font-style: normal; color: var(--orange); margin: 0 .15em; }
 
-#gallery h2 { margin-bottom: 36px; }
-.gallery { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 14px; align-items: end; }
-.gallery img { width: 100%; object-fit: cover; }
-.gallery img:nth-child(1) { aspect-ratio: 4/5; }
-.gallery img:nth-child(2) { aspect-ratio: 1/1.15; }
-.gallery img:nth-child(3) { aspect-ratio: 1; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.gallery img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--r); }
 
-.about p { margin-bottom: 1.2rem; max-width: 62ch; }
-.facts { display: flex; gap: 48px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--ink); }
-dt { font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
-dd { font: 600 1.5rem "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.statement { font: 500 clamp(1.5rem, 3vw, 2.4rem)/1.25 "Inter Tight", sans-serif; letter-spacing: -0.02em; max-width: 30em; }
+.about-cols { display: grid; grid-template-columns: 1fr 1fr 0.8fr; gap: 40px; margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--line); color: var(--muted); }
+dt { font-size: .8rem; color: var(--muted); }
+dd { font: 600 1.35rem "Inter Tight", sans-serif; color: var(--ink); letter-spacing: -0.02em; }
+.facts { display: grid; gap: 18px; align-content: start; }
 
-.contact { background: var(--orange); color: #14181c; padding: 90px 0; }
-.contact p { max-width: 56ch; font-size: 1.15rem; }
-.big-link { display: inline-block; margin: 28px 0; font: 700 clamp(1.8rem, 4.5vw, 3.2rem) "Barlow Condensed", sans-serif; text-transform: uppercase; text-decoration: underline; text-underline-offset: 6px; word-break: break-word; }
+.contact-wrap { padding-top: clamp(70px, 9vw, 120px); }
+.contact { background: var(--ink); color: #fff; border-radius: 36px; padding: clamp(32px, 6vw, 80px); }
+.contact h2 { margin-bottom: 20px; }
+.contact p { color: #b3b8be; max-width: 52ch; font-size: 1.1rem; }
+.big-link { display: inline-block; margin: 30px 0 44px; font: 600 clamp(1.8rem, 5vw, 4rem)/1.1 "Inter Tight", sans-serif; letter-spacing: -0.035em; text-decoration: none; color: var(--orange); word-break: break-word; }
 .big-link:hover { color: #fff; }
-.details { display: flex; flex-wrap: wrap; gap: 24px 60px; padding-top: 24px; border-top: 1px solid rgba(20,24,28,.5); }
-.contact dt { color: rgba(20,24,28,.7); }
-.contact dd { font: 500 1.1rem "Barlow", sans-serif; text-transform: none; }
+.details { display: flex; flex-wrap: wrap; gap: 24px 70px; padding-top: 28px; border-top: 1px solid #2c3136; }
+.contact dt { color: #8b9198; }
+.contact dd { font: 500 1.05rem "Inter", sans-serif; color: #fff; letter-spacing: 0; }
 
-.footer { background: var(--ink); color: #aeb3b8; padding: 26px 0; font-size: .9rem; }
+.footer { padding: 40px 0 36px; color: var(--muted); font-size: .9rem; }
 .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
 .footer a:hover { color: var(--orange); }
 
-@media (max-width: 860px) {
+@media (max-width: 960px) {
+  .bento { grid-template-columns: repeat(2, 1fr); }
+  .tile.feature { grid-column: span 2; grid-row: auto; min-height: 340px; }
+  .hero { flex-direction: column; align-items: stretch; justify-content: flex-end; }
+  .hero-card { flex: none; }
+  .about-cols { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 700px) {
   .menu-btn { display: block; }
-  .nav-links { position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); max-height: 0; overflow: hidden; transition: max-height .25s; }
-  .nav-links.open { max-height: 380px; }
-  .nav-links a { display: block; padding: 14px 20px; }
-  .nav-links .nav-cta { margin: 8px 20px 16px; text-align: center; }
-  .split { grid-template-columns: 1fr; gap: 28px; }
-  .split > h2 { position: static; }
-  .section, .contact { padding: 60px 0; }
-  .gallery { grid-template-columns: 1fr; }
-  .gallery img { aspect-ratio: 4/3 !important; }
-  .facts { gap: 32px; }
+  .nav { padding: 0 10px 0 22px; position: relative; }
+  .nav-links { position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: #fff; border-radius: 24px; box-shadow: 0 12px 40px rgba(0,0,0,.14); max-height: 0; overflow: hidden; transition: max-height .25s; }
+  .nav-links.open { max-height: 420px; padding: 8px; }
+  .nav-links a { display: block; padding: 14px 16px; }
+  .nav-links .nav-cta { margin: 6px 0 0; text-align: center; }
+  .bento, .gallery { grid-template-columns: 1fr; }
+  .tile.feature { grid-column: auto; }
+  .tile { min-height: 0; }
+  .hero { margin: 8px; border-radius: 28px; background: linear-gradient(180deg, rgba(10,12,14,.45) 0%, rgba(10,12,14,.88) 100%), url("./assets/truck4.jpg") center 40% / cover; }
+  .tile:last-child { grid-column: auto; }
 }

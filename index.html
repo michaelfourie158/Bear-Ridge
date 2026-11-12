@@ -16,7 +16,7 @@
       South Africa, Nelspruit, Transport Services, Logistics Services, Timber Transport, Cement Transport, Fertilizer Transport, 
       Tile Cement Transport, Limestone Transport, International Transport, Johannesburg, Pretoria, Rustenburg, Steelpoort, Brits, Lowveld, Maputo, Ressano"
     />
-    <meta name="theme-color" content="#14181c" />
+    <meta name="theme-color" content="#f6f5f1" />
     <meta name="author" content="Michael Fourie" />
 
     <link
@@ -42,13 +42,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header class="site-header" id="top">
-      <nav class="nav wrap" aria-label="Main">
-        <a href="#top" class="brand">Bear Ridge <span>Holdings</span></a>
+      <nav class="nav" aria-label="Main">
+        <a href="#top" class="brand">Bear Ridge</a>
         <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
         <ul class="nav-links">
           <li><a href="#services">Services</a></li>
@@ -61,37 +63,38 @@
     </header>
 
     <section class="hero">
-      <div class="wrap hero-inner">
+      <div class="hero-copy">
         <h1>Transport &amp; Logistics Services</h1>
-        <p>We transport coal, chrome, cement, fertilizer, timber, and more to various destinations in South Africa and beyond. Contact us for more information on our services and to request a quote.</p>
+        <p>We transport coal, chrome, cement, fertilizer, timber, and more to various destinations in South Africa and beyond.</p>
+      </div>
+      <aside class="hero-card">
+        <p>Contact us for more information on our services and to request a quote.</p>
         <a href="#contact" class="btn">Request a quote</a>
-      </div>
-      <p class="hero-foot wrap">Nelspruit, South Africa &nbsp;/&nbsp; Since 2001</p>
+        <small>Nelspruit, South Africa · Since 2001</small>
+      </aside>
     </section>
 
-    <section id="services" class="section wrap split">
-      <h2>Our Services</h2>
-      <ol class="services">
-          <li><span class="n">01</span><h3>Coal Transport</h3><p>Efficient coal transport services for industrial and energy sectors. Our team ensures safe handling and timely delivery to keep your operations running smoothly.</p></li>
-          <li><span class="n">02</span><h3>Chrome Transport</h3><p>Reliable transport services for chrome ore, catering to mining and industrial needs. Our team ensures secure handling and timely delivery to meet your production requirements.</p></li>
-          <li><span class="n">03</span><h3>Cement Transport</h3><p>Secure and efficient transport of cement for your construction needs. Our logistics are tailored to preserve the quality of cement and meet your project deadlines.</p></li>
-          <li><span class="n">04</span><h3>Fertilizer Transport</h3><p>Reliable delivery of fertilizers to enhance your agricultural outputs. Our services are designed to meet the specific needs of your farming operations, with timely deliveries and appropriate handling.</p></li>
-          <li><span class="n">05</span><h3>Timber Transport</h3><p>We ensure safe and reliable transportation of timber to your desired destinations. Our fleet is equipped to handle various sizes and types of timber, ensuring that your cargo arrives in perfect condition.</p></li>
-          <li><span class="n">06</span><h3>Tile Cement Transport</h3><p>Specialized transport for tile cement, ensuring prompt and safe delivery. Our logistics are tailored to preserve the quality of tile cement and meet your project deadlines.</p></li>
-          <li><span class="n">07</span><h3>Limestone Transport</h3><p>Efficient transport services for limestone, catering to industrial and construction needs. Our team ensures secure handling and timely delivery to meet your production requirements.</p></li>
-          <li><span class="n">08</span><h3>International Transport</h3><p>We provide international shipping services for cross-border logistics. Our team navigates complex regulations to ensure smooth delivery to your global destinations.</p></li>
-      </ol>
+    <section id="services" class="section wrap">
+      <h2>Our services</h2>
+      <div class="bento">
+        <article class="tile feature"><span class="n">01</span><div><h3>Coal transport</h3><p>Efficient coal transport services for industrial and energy sectors. Our team ensures safe handling and timely delivery to keep your operations running smoothly.</p></div></article>
+        <article class="tile"><span class="n">02</span><div><h3>Chrome transport</h3><p>Reliable transport services for chrome ore, catering to mining and industrial needs. Our team ensures secure handling and timely delivery to meet your production requirements.</p></div></article>
+        <article class="tile"><span class="n">03</span><div><h3>Cement transport</h3><p>Secure and efficient transport of cement for your construction needs. Our logistics are tailored to preserve the quality of cement and meet your project deadlines.</p></div></article>
+        <article class="tile dark"><span class="n">04</span><div><h3>Fertilizer transport</h3><p>Reliable delivery of fertilizers to enhance your agricultural outputs. Our services are designed to meet the specific needs of your farming operations, with timely deliveries and appropriate handling.</p></div></article>
+        <article class="tile"><span class="n">05</span><div><h3>Timber transport</h3><p>We ensure safe and reliable transportation of timber to your desired destinations. Our fleet is equipped to handle various sizes and types of timber, ensuring that your cargo arrives in perfect condition.</p></div></article>
+        <article class="tile"><span class="n">06</span><div><h3>Tile Cement transport</h3><p>Specialized transport for tile cement, ensuring prompt and safe delivery. Our logistics are tailored to preserve the quality of tile cement and meet your project deadlines.</p></div></article>
+        <article class="tile"><span class="n">07</span><div><h3>Limestone transport</h3><p>Efficient transport services for limestone, catering to industrial and construction needs. Our team ensures secure handling and timely delivery to meet your production requirements.</p></div></article>
+        <article class="tile dark"><span class="n">08</span><div><h3>International transport</h3><p>We provide international shipping services for cross-border logistics. Our team navigates complex regulations to ensure smooth delivery to your global destinations.</p></div></article>
+      </div>
     </section>
 
-    <section id="destination" class="section strip">
-      <div class="wrap">
-        <h2>Our Destinations</h2>
-        <ul class="places"><li>Johannesburg</li><li>Pretoria</li><li>Rustenburg</li><li>Steelpoort</li><li>Brits</li><li>Lowveld</li><li>Maputo</li><li>Ressano</li></ul>
-      </div>
+    <section id="destination" class="section wrap">
+      <h2>Our destinations</h2>
+      <p class="places"><span>Johannesburg</span> <i>/</i> <span>Pretoria</span> <i>/</i> <span>Rustenburg</span> <i>/</i> <span>Steelpoort</span> <i>/</i> <span>Brits</span> <i>/</i> <span>Lowveld</span> <i>/</i> <span>Maputo</span> <i>/</i> <span>Ressano</span></p>
     </section>
 
     <section id="gallery" class="section wrap">
-      <h2>Our Fleet</h2>
+      <h2>Our fleet</h2>
       <div class="gallery">
         <img src="./assets/truck1.jpg" alt="Bear Ridge truck on the road" loading="lazy" />
         <img src="./assets/truck5.jpg" alt="Bear Ridge truck loaded for delivery" loading="lazy" />
@@ -99,26 +102,25 @@
       </div>
     </section>
 
-    <section id="about" class="section wrap split">
-      <h2>About Us</h2>
-      <div class="about">
-        <p>Bear Ridge Holdings is a transport and logistics company based in Nelspruit, South Africa. We specialize in the transportation of goods such as coal, chrome, cement, fertilizer, and timber to various destinations. Our services are designed to meet the specific needs of our clients, providing efficient and reliable transport solutions for a wide range of industries.</p>
+    <section id="about" class="section wrap about">
+      <h2>About us</h2>
+      <p class="statement">Bear Ridge Holdings is a transport and logistics company based in Nelspruit, South Africa. We specialize in the transportation of goods such as coal, chrome, cement, fertilizer, and timber to various destinations.</p>
+      <div class="about-cols">
+        <p>Our services are designed to meet the specific needs of our clients, providing efficient and reliable transport solutions for a wide range of industries.</p>
         <p>Founded in 2001, Bear Ridge Holdings has established itself as a leader in the industry, providing efficient and secure transport solutions to meet the needs of our clients. Our team is dedicated to ensuring that your cargo reaches its destination safely and on time.</p>
         <dl class="facts"><div><dt>Founded</dt><dd>2001</dd></div><div><dt>Headquarters</dt><dd>Nelspruit, South Africa</dd></div></dl>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="wrap split">
-        <h2>Contact Us</h2>
-        <div>
-          <p>For any enquiries or to request a quote, please contact us using the details below. We look forward to hearing from you and discussing how we can meet your logistics needs.</p>
-          <a class="big-link" href="mailto:masdevalia@lantic.net">masdevalia@lantic.net</a>
-          <dl class="details">
-            <div><dt>Phone</dt><dd>Carl Willemse<br /><a href="tel:+27838222487">+27 83 822 2487</a></dd></div>
-            <div><dt>Address</dt><dd>Portion 74 of Farm, Alkmaar,<br />Nelspruit, South Africa</dd></div>
-          </dl>
-        </div>
+    <section id="contact" class="wrap contact-wrap">
+      <div class="contact">
+        <h2>Contact us</h2>
+        <p>For any enquiries or to request a quote, please contact us using the details below. We look forward to hearing from you and discussing how we can meet your logistics needs.</p>
+        <a class="big-link" href="mailto:masdevalia@lantic.net">masdevalia@lantic.net</a>
+        <dl class="details">
+          <div><dt>Phone</dt><dd>Carl Willemse<br /><a href="tel:+27838222487">+27 83 822 2487</a></dd></div>
+          <div><dt>Address</dt><dd>Portion 74 of Farm, Alkmaar,<br />Nelspruit, South Africa</dd></div>
+        </dl>
       </div>
     </section>
 
