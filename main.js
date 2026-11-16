@@ -83,10 +83,38 @@
     return `Quote request\nName: ${v("name")}\nPhone: ${v("phone")}\nCargo: ${v("cargo")}\nFrom: ${v("from")}\nTo: ${v("to")}\nDetails: ${v("msg")}`;
   };
   form.addEventListener("input", () => { wa.href = "https://wa.me/27838222487?text=" + encodeURIComponent(compose()); });
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (!form.name.value.trim() || !form.phone.value.trim() || !form.cargo.value) { note.textContent = "Please add your name, phone and cargo."; return; }
+  // Web3Forms access key (public by design). While it is the placeholder, fall back to the email app.
+  const KEY = "83721e7b-1f7b-4116-b486-15070c868654";
+  const mailtoFallback = () => {
     note.textContent = "Opening your email app…";
     location.href = "mailto:masdevalia@lantic.net?subject=" + encodeURIComponent("Quote request: " + form.cargo.value) + "&body=" + encodeURIComponent(compose());
+  };
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!form.name.value.trim() || !form.phone.value.trim() || !form.cargo.value) { note.textContent = "Please add your name, phone and cargo."; return; }
+    if (form.botcheck && form.botcheck.checked) return;
+    if (KEY === "YOUR_ACCESS_KEY") { mailtoFallback(); return; }
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true; note.textContent = "Sending…";
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: KEY,
+          subject: "Quote request: " + form.cargo.value,
+          from_name: "Bear Ridge website",
+          name: form.name.value.trim(), phone: form.phone.value.trim(), cargo: form.cargo.value,
+          from: form.from.value.trim(), to: form.to.value.trim(), message: form.msg.value.trim()
+        })
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message || "failed");
+      form.reset();
+      wa.href = "https://wa.me/27838222487";
+      note.textContent = "Thank you. We'll call you back soon.";
+    } catch (err) {
+      note.textContent = "Sorry, that didn't send. Please use WhatsApp or call us.";
+    } finally { btn.disabled = false; }
   });
 })();
